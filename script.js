@@ -1,17 +1,24 @@
 const yesOption = document.getElementById('yes');
 const noOption = document.getElementById('no');
  
-function moveNoOption() {
-  const randomX = Math.random() * (window.innerWidth - 100);
-  const randomY = Math.random() * (window.innerHeight - 100);
+noOption.addEventListener('click', () => {
+  noOption.classList.add('clicked');
+});
  
-noOption.style.left = `${randomX}px`;
-noOption.style.top = `${randomY}px`;
-}
+noOption.addEventListener('mouseenter', () => {
+  const randomX = Math.random();
+  const randomY = Math.random();
  
-noOption.addEventListener('click', moveNoOption);
-noOption.addEventListener('mouseenter', moveNoOption);
+noOption.style.setProperty('--random-x', randomX);
+noOption.style.setProperty('--random-y', randomY);
+});
+ 
+noOption.addEventListener('transitionend', () => {
+  if (noOption.classList.contains('clicked')) {
+    noOption.classList.remove('clicked');
+  }
+});
  
 yesOption.addEventListener('click', () => {
-  alert("¡Ya que insistes, tenemos una cita el 19 de enero, te amo cansona :P!");
+  alert("¡Yo te dino-amo más!");
 });

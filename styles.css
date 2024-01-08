@@ -7,17 +7,17 @@ body {
   font-family: Arial, sans-serif;
   flex-direction: column;
 }
- 
+
 .container {
   text-align: center;
 }
- 
+
 .options {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
- 
+
 .option {
   display: inline-block;
   padding: 10px;
@@ -26,4 +26,13 @@ body {
   color: #fff;
   cursor: pointer;
   user-select: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.option:hover,
+.option.clicked {
+  transform: translate(
+    calc(100vw * var(--random-x)),
+    calc(100vh * var(--random-y))
+  );
 }

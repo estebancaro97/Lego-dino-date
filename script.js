@@ -20,5 +20,5 @@ noOption.addEventListener('transitionend', () => {
 });
  
 yesOption.addEventListener('click', () => {
-  alert("¡Yo te dino-amo más!");
+  alert("¡Ya que insistes, tenemos una dino-cita el 19, te amo cansona :p!");
 });
